@@ -24,7 +24,7 @@ const showArtisans = require('./routes/showArtisans');
 
 const serviceSetupCallBack = function(connection) {
   return {
-    requestArtisansDataService : new RequestArtisansDataService(connection)
+    artisansDataService : new RequestArtisansDataService(connection)
   }
 
 };
