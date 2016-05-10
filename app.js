@@ -9,7 +9,7 @@ const express      = require('express'),
       app          = express();
 
 
-const showArtisansDataServices = require('./data_services/showArtisansDataServices');
+const RequestArtisansDataServices = require('./data_services/requestArtisansDataServices');
 
 const dbOptions = {
   host      : 'localhost',
@@ -24,9 +24,9 @@ const showArtisans = require('./routes/showArtisans');
 
 const serviceSetupCallBack = function(connection) {
   return {
-    showArtisansDataServices : new showArtisansDataServices(connection)
+    requestArtisansDataServices : new RequestArtisansDataServices(connection)
   }
-  
+
 };
 
 

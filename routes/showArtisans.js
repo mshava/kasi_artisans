@@ -8,9 +8,9 @@ exports.show = function(req, res, next) {
           .then(function(artisans) {
             res.render('show-artisans', {
               artisans : artisans
-            });
-          });
-    });
+            })
+          })
+    })
     .catch(function(error){
       next(error);
     });

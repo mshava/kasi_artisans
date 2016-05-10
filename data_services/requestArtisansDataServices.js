@@ -1,13 +1,9 @@
-const QueryService = require('../data_services/query-service');
-const Promise = require('bluebird');
-const showArtisansDataServices = require('../data_services/showArtisansDataServices');
+const QueryService = require('../data_services/query-services');
 
-module.exports = function(connection) {
-    const queryService = new QueryService(connection);
-    const sdql = new showArtisansDataServices(connection);
+module.exports = function() {
+  const queryService = new QueryService(connection);
+    this.showArtisans = function() {
+      return queryService.executeQuery('select * FROM artisans');
 
-    this.showArtisans = function(id) {
-      return QueryService.executeQuery('select * from artisans where id = ?', id);
     };
-    
 };

@@ -14,5 +14,10 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/mshava/kasi_artisans/issues"
+  },
+  "dependencies": {
+    "mysql": "~2.10.2",
+    "bluebird": "~3.3.5",
+    "connection-provider": "git://github.com/avermeulen/connection-provider"
   }
 }
