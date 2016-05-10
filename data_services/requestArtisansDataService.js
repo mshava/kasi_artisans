@@ -1,8 +1,10 @@
+const Promise = require("bluebird");
+
 const QueryService = require('../data_services/query-services');
 
-module.exports = function() {
+module.exports = function(connection) {
   const queryService = new QueryService(connection);
-    this.showArtisans = function() {
+    this.showArtisan = function() {
       return queryService.executeQuery('select * FROM artisans');
 
     };

@@ -1,16 +1,16 @@
 exports.show = function(req, res, next) {
   req.getServices()
     .then(function(services) {
-      const showArtisansDataServices = services.showArtisansDataServices;
+      const showArtisansDataService = services.showArtisansDataService;
       console.log(services);
       const id = req.params.id;
-        showArtisansDataServices.showArtisans()
+        showArtisansDataService.showArtisan()
           .then(function(artisans) {
             res.render('show-artisans', {
               artisans : artisans
             })
           })
-    })
+      })
     .catch(function(error){
       next(error);
     });

@@ -9,7 +9,7 @@ const express      = require('express'),
       app          = express();
 
 
-const RequestArtisansDataServices = require('./data_services/requestArtisansDataServices');
+const RequestArtisansDataService = require('./data_services/requestArtisansDataService');
 
 const dbOptions = {
   host      : 'localhost',
@@ -24,7 +24,7 @@ const showArtisans = require('./routes/showArtisans');
 
 const serviceSetupCallBack = function(connection) {
   return {
-    requestArtisansDataServices : new RequestArtisansDataServices(connection)
+    requestArtisansDataService : new RequestArtisansDataService(connection)
   }
 
 };
@@ -45,6 +45,7 @@ app.get("/", function(req, res) {
   res.render("index");
 });
 
+app.get("/show-artisans", showArtisans.show);
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, function () {

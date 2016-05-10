@@ -1,0 +1,25 @@
+<h2>View artisans</h2>
+  <div class="border">
+    <table class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each artisans}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{contacts}}</td>
+            <td>{{address}}</td>
+            <td>{{type}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </table>
+  </div>
