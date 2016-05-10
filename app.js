@@ -3,10 +3,13 @@ const express      = require('express'),
       cookieParser = require('cookie-parser'),
       session      = require('express-session'),
       bodyParser   = require('body-parser'),
-      //mysql        = require('mysql'),
+      mysql        = require('mysql'),
       connectionPv = require('connection-provider'),
       compression  = require('compression'),
       app          = express();
+
+
+const showArtisansDataServices = require('./data_services/showArtisansDataServices');
 
 const dbOptions = {
   host      : 'localhost',
@@ -17,8 +20,17 @@ const dbOptions = {
 };
 
 
+const showArtisans = require('./routes/showArtisans');
 
-//app.use(connectionPv(dbOptions, serviceSetupCallBack));
+const serviceSetupCallBack = function(connection) {
+  return {
+    showArtisansDataServices : new showArtisansDataServices(connection)
+  }
+  
+};
+
+
+app.use(connectionPv(dbOptions, serviceSetupCallBack));
 app.use(cookieParser('shhhh, very secret'));
 app.use(session({ secret : 'keyboard cat', cookie :{ maxAge : 3600000 }, resave : true, saveUninitialized : true }));
 app.use(express.static('public'));
