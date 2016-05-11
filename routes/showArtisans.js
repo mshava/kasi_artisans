@@ -2,10 +2,10 @@ exports.show = function(req, res, next) {
   req.getServices()
     .then(function(services) {
       const artisansDataService = services.artisansDataService;
-      console.log(services.artisansDataService.showArtisan());
-      const id = req.params.id;
+      //console.log(artisansDataService.showArtisan());
       artisansDataService.showArtisan()
           .then(function(artisans) {
+            console.log(artisans);
             res.render('show-artisans', {
               artisans : artisans
             })
