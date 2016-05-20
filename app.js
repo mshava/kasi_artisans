@@ -50,6 +50,10 @@ app.get("/", function(req, res) {
 });
 
 app.get("/show-artisans", showArtisans.show);
+app.get("/add-artisans",function(req, res) {
+  res.render("add-artisans");
+});
+app.post("/add-artisans", addArtisans.add);
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, function () {
