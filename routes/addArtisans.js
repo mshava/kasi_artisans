@@ -4,7 +4,7 @@ exports.add = function(req, res, next) {
       .then(function(services) {
           var data = {
               name : req.body.name,
-              contacts : req.body.contacts,
+              tel_number : req.body.tel_number,
               address : req.body.address,
               type : req.body.type
             };
