@@ -1,5 +1,5 @@
-<h5 style="small-6 column">View artisans</h5>
-<div class="border">
+<h5>View artisans</h5>
+<div class="small-6 column">
   <table class="table-responsive">
     <table class="table">
       <thead>
@@ -7,16 +7,20 @@
         <th>Name</th>
         <th>Contact</th>
         <th>Address</th>
-        <th>Type</th>
+        <th>Job Title</th>
+        <th>Image</th>
+        <th>Points</th>
       </tr>
       </thead>
       <tbody>
         {{#each artisans}}
       <tr>
         <td>{{name}}</td>
-        <td>{{tel_number}}</td>
+        <td>{{contacts}}</td>
         <td>{{address}}</td>
-        <td>{{type}}</td>
+        <td>{{job_title}}</td>
+        <td>{{img}}</td>
+        <td>{{score}}</td>
       </tr>
         {{/each}}
       </tbody>

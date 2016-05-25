@@ -4,9 +4,10 @@ exports.add = function(req, res, next) {
       .then(function(services) {
           var data = {
               name : req.body.name,
-              tel_number : req.body.tel_number,
+              contacts : req.body.contacts,
               address : req.body.address,
-              type : req.body.type
+              job_title : req.body.job_title,
+              img : req.body.img
             };
             console.log(req.body.name);
             const addArtisansDataServices = services.addArtisansDataServices;
